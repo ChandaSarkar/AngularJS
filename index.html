@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment - 7</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body ng-app="indexModule">
+        <div ng-controller="indexController">
+
+            <div>
+                Search : <input ng-model="searchText"><br>
+                <a href="#" ng-click="showSearchDialogue()">Advanced Search</a>
+                <div ng-show="showDialogue">
+                    Search by Name: <input ng-model="nameText"><br>
+                    Search by Email : <input ng-model="emailText"><br>
+                    <input type="button" value="Search" ng-click="searchContent()">
+                </div>
+            </div>
+            <hr>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-class="{'highlight': $index > 4}" ng-repeat="user in appData | filter:searchText" data='user' template-directive ng-click="showDelete = true">
+                    </tr>
+                </tbody>
+            </table>
+            <input type="button" value="Add User" ng-click="collapse()">
+            <div ng-if="addUser">
+                Name: <input ng-model="$parent.userName"><br>
+                Email : <input ng-model="$parent.userEmail"><br>
+                <input type="button" value="Add User Data" ng-click="addNewUserData()">
+            </div>
+        </div>
+
+        <!-- Including scripts -->
+        <script src="node_modules\angular\angular.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
