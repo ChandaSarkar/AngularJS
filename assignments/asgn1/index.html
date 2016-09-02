@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment - 1</title>
+    </head>
+    <body ng-app="indexModule">
+        <div ng-controller="indexController">
+            <div ng-repeat="data in appData track by $index">
+                {{data}}
+            </div>
+        </div>
+
+        <!-- Including scripts -->
+        <script src="node_modules\angular\angular.js"></script>
+        <script src="effects.js"></script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment - 3</title>
+    </head>
+    <body ng-app="indexModule">
+        <div ng-controller="indexController">
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in appData">
+                        <td>{{user.name}}</td>
+                        <td>{{user.department}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Including scripts -->
+        <script src="node_modules\angular\angular.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

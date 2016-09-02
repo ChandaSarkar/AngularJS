@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 2</title>
+    </head>
+    <body ng-app="indexModule">
+        <div ng-controller="storeController">
+            <div ng-repeat="data in storeData">
+                {{data}}
+            </div>
+        </div>
+        <div ng-controller="indexController">
+            <div ng-repeat="data in indexData">
+                {{data}}
+            </div>
+        </div>
+
+        <!-- Including scripts -->
+        <script src="node_modules\angular\angular.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

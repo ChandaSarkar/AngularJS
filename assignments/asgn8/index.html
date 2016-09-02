@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Assignment - 7</title>
+        <title>Assignment - 8</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="styleSheet" href="node_modules\angular-ui-grid\ui-grid.min.css"/>
     </head>
     <body ng-app="indexModule">
         <div ng-controller="indexController">
@@ -25,7 +26,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-class="{'highlight': $index > 4}" ng-repeat="user in appData | filter:searchText" data='user' template-directive ng-click="showDelete = true">
+                    <tr ng-class="{'highlight': $index > 4}" ng-repeat="user in appData| filter:searchText" data='user' template-directive>
                     </tr>
                 </tbody>
             </table>
@@ -35,10 +36,17 @@
                 Email : <input ng-model="$parent.userEmail"><br>
                 <input type="button" value="Add User Data" ng-click="addNewUserData()">
             </div>
+
+            <!-- Using angular-ui-grid starts here -->
+            <div id="users-list" ui-grid="{data: appData}" class="grid"></div>
+            <!-- Using angular-ui-grid ends here -->
+
+
         </div>
 
         <!-- Including scripts -->
         <script src="node_modules\angular\angular.js"></script>
+        <script src="node_modules\angular-ui-grid\ui-grid.min.js"></script>
         <script src="index.js"></script>
     </body>
 </html>

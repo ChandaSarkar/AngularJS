@@ -1,0 +1,15 @@
+{
+  "name": "asgn8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chanda",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-grid": "^3.2.6"
+  }
+}

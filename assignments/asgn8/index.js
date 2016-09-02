@@ -1,16 +1,24 @@
-angular.module("indexModule", [])
+angular.module("indexModule", ['ui.grid'])
         .controller("indexController", function($scope, userService) {
             $scope.showDialogue = false;
-            //$scope.showDelete = false;
 
             // This method will help showing advanced search pane
             $scope.showSearchDialogue = function() {
                 $scope.showDialogue = false;
             };
 
-            $scope.toggleDelete = function() {
-                console.log('click called');
-                $scope.showDelete = true;
+            // This method will remove the user
+            $scope.removeNewUser = function() {
+                var arr = [];
+                for (var index = 0; index < $scope.appData.length; ++index) {
+                    var user = $scope.appData[index];
+                    if (this.user.id !== user.id) {
+                        arr.push(user);
+                    }
+                }
+
+                $scope.appData = arr;
+                localStorage.setItem("userData", angular.toJson(arr));
             };
 
             // This method will add data
@@ -63,18 +71,24 @@ angular.module("indexModule", [])
                 scope: {
                     data: '='
                 },
-                template: "<td>{{data.name}}</td><td>{{data.email}} <span ng-if='showDelete'>X</span></td>",
-                link: function(scope, element, ele, bab) {
-                    /*if (scope.showNewTemplate === true) {
-                     element.on('mouseover', function() {
-                     this.classList.add('highlight');
-                     });
-                     element.on('mouseout', function() {
-                     if (this.className.toLowerCase().indexOf('highlight') > -1) {
-                     this.classList.remove('highlight');
-                     }
-                     });
-                     }*/
+                template: "<td>{{data.name}}</td><td>{{data.email}} <span ng-show='showDel' ng-click='$parent.removeNewUser()'>X</span></td>",
+                link: function(scope, element, attr) {
+                    scope.showDel = false;
+
+                    element.on('mouseover', function($event) {
+                        var scope = angular.element($event.target).scope();
+                        scope.$apply(function() {
+                            scope.showDel = true;
+                        });
+                    });
+
+                    element.on('mouseout', function($event) {
+                        var scope = angular.element($event.target).scope();
+                        scope.$apply(function() {
+                            scope.showDel = false;
+                        });
+                    });
+
                 }
             };
         });

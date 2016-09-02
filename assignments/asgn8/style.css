@@ -1,0 +1,10 @@
+table, td {
+    border: 1px solid #ccc;
+}
+.highlight {
+    background-color: #ccc;
+}
+.grid {
+    width: 100%;
+    height: 200px;
+}

@@ -1,0 +1,53 @@
+Ref Url : https://github.com/jitendrathakur/ng-pioneer/commits/master
+
+Only use Angular1.5 and HTML
+Assgn 1: print value from controller
+
+Assgn 2: Create two controller on same dom and print value
+
+Assgn 3: 
+1. Fetch data using angular service from below URI:
+https://api.github.com/users 
+2. call service to controller
+3. render data into table
+
+Assgn 5: 
+1. You have table grid already now extending that, do following:
+2. When user clicked any row, then there should be an accordian. 
+3. And there should '<h3>I have selected this user</h3>'
+4. Do this using custom directive
+5. It should work for all rows.
+
+Assgn 6:
+1. Create add row button
+2. Put grid data on local storage
+3. When click on 'add row' two input box will appear
+4. When click submit
+5. Data will push to storage
+6. Storage data will fetch on controller
+7. Generate view
+
+
+Assgn 7: 
+1. Newly added item should show green while mouse over
+2. Do not use hover css property use js
+3. Directive link
+
+Assgn 8: 
+You have list already. Use that and do following.
+1. Use ui-grid angular provider
+2. Create table using ui-grid
+
+Assgn 9:
+1. Use ui-select 
+2. List the users on select box
+3. If any user selected then grid will show record for that user only.
+4. UI-grid should have functionality to export
+5. Use `ngStorage` instead of local storage
+
+Assgn 10:
+1. Use angular material design for view
+2. Style you page with basic properties
+
+
+

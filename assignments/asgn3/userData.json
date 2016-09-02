@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Martin",
+        "department": "Quality"
+    },
+    {
+        "name": "Paul",
+        "department": "Engineering"
+    },
+    {
+        "name": "Michle",
+        "department": "Management"
+    }
+]
