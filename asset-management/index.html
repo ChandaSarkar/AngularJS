@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular 1.X</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script type="text/javascript" src="http://172.27.237.86:8080/build/main.bundle.js"></script>
+    <link rel="stylesheet" href="http://172.27.237.86:8080/style/index.css" />
+</head>
+<body ng-app="asset-manager">
+    <div ng-controller="home-controller">
+        <div>Asset Holder List</div>
+        <div class="user-list">
+            <table ng-init="canEdit = false">
+                <tr>
+                    <th>Sr.</th>
+                    <th>UID</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Company</th>
+                    <th>Action</th>
+                </tr>
+                <tr ng-repeat="u in users track by $index">
+                    <td>
+                        {{$index + 1}}
+                    </td>
+                    <td>{{u.id | prependuser}}</td>
+                    <td>{{u.name}}</td>
+                    <td>{{u.username | lowercase}}</td>
+                    <td>{{u.address.street + ", " + u.address.city}}</td>
+                    <td>{{u.phone}}</td>
+                    <td>{{u.company.name | uppercase}}</td>
+                    <td>
+                        <button ng-click="editUser(u)">Edit</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="edit-portal" ng-show="canEdit === true">
+            <div>Edit user details</div>
+            <section>
+                <span>Name</span>
+                <input type="text" ng-model="editedData.name">
+
+                <br>
+                <button ng-click="saveUser(editedData)">Save</button>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
